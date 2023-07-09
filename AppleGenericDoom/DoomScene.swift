@@ -13,6 +13,7 @@ class DoomScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         doomgeneric_Create(0, nil)
+        listdir()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -22,5 +23,22 @@ class DoomScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         doomgeneric_Tick()
+    }
+
+    func listdir() {
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+
+        do {
+            let items = try fm.contentsOfDirectory(atPath: path)
+            print(path)
+            print(fm.currentDirectoryPath)
+
+            for item in items {
+                print("Found \(item)")
+            }
+        } catch {
+            // failed to read directory – bad permissions, perhaps?
+        }
     }
 }
