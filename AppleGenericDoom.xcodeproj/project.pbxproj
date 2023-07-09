@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31D8E5E2A5B0C3B0062F401 /* doomgeneric_objc_interop.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */; };
+		C31D8E602A5B0DB30062F401 /* DoomGenericSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */; };
 		C3493FE42A5A547300E5855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE32A5A547300E5855C /* AppDelegate.swift */; };
 		C3493FE62A5A547300E5855C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE52A5A547300E5855C /* ViewController.swift */; };
 		C3493FE82A5A547400E5855C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3493FE72A5A547400E5855C /* Assets.xcassets */; };
@@ -94,10 +96,11 @@
 		C34940FC2A5A555400E5855C /* mus2mid.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A42A5A555200E5855C /* mus2mid.c */; };
 		C34940FD2A5A555400E5855C /* f_wipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A52A5A555200E5855C /* f_wipe.c */; };
 		C34940FE2A5A555400E5855C /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
-		C34941002A5A55F600E5855C /* doomgeneric_apple.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doomgeneric_objc_interop.m; sourceTree = "<group>"; };
+		C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoomGenericSwift.swift; sourceTree = "<group>"; };
 		C3493FE02A5A547300E5855C /* AppleGenericDoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleGenericDoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3493FE32A5A547300E5855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3493FE52A5A547300E5855C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -284,7 +287,6 @@
 		C34940A72A5A555300E5855C /* p_floor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p_floor.c; sourceTree = "<group>"; };
 		C34940A82A5A555300E5855C /* r_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = r_data.h; sourceTree = "<group>"; };
 		C34940A92A5A555300E5855C /* w_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = w_main.h; sourceTree = "<group>"; };
-		C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = doomgeneric_apple.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,7 +322,8 @@
 				C3493FF22A5A54BB00E5855C /* doomgeneric */,
 				C3493FE32A5A547300E5855C /* AppDelegate.swift */,
 				C3493FE52A5A547300E5855C /* ViewController.swift */,
-				C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */,
+				C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */,
+				C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */,
 				C3493FF32A5A552A00E5855C /* AppleGenericDoom-Bridging-Header.h */,
 				C3493FE72A5A547400E5855C /* Assets.xcassets */,
 				C3493FE92A5A547400E5855C /* Main.storyboard */,
@@ -596,6 +599,7 @@
 				C34940C52A5A555400E5855C /* p_map.c in Sources */,
 				C34940D82A5A555400E5855C /* r_things.c in Sources */,
 				C34940E02A5A555400E5855C /* w_file.c in Sources */,
+				C31D8E5E2A5B0C3B0062F401 /* doomgeneric_objc_interop.m in Sources */,
 				C34940AC2A5A555400E5855C /* w_checksum.c in Sources */,
 				C34940B02A5A555400E5855C /* p_spec.c in Sources */,
 				C34940CE2A5A555400E5855C /* i_endoom.c in Sources */,
@@ -611,7 +615,6 @@
 				C34940EE2A5A555400E5855C /* p_maputl.c in Sources */,
 				C34940C62A5A555400E5855C /* doomgeneric.c in Sources */,
 				C34940D62A5A555400E5855C /* memio.c in Sources */,
-				C34941002A5A55F600E5855C /* doomgeneric_apple.c in Sources */,
 				C34940FC2A5A555400E5855C /* mus2mid.c in Sources */,
 				C34940E72A5A555400E5855C /* i_joystick.c in Sources */,
 				C34940BF2A5A555400E5855C /* m_random.c in Sources */,
@@ -654,6 +657,7 @@
 				C34940EB2A5A555400E5855C /* r_plane.c in Sources */,
 				C34940E62A5A555400E5855C /* d_items.c in Sources */,
 				C34940F42A5A555400E5855C /* m_config.c in Sources */,
+				C31D8E602A5B0DB30062F401 /* DoomGenericSwift.swift in Sources */,
 				C34940D72A5A555400E5855C /* p_telept.c in Sources */,
 				C34940B52A5A555400E5855C /* doomstat.c in Sources */,
 				C34940AA2A5A555400E5855C /* m_controls.c in Sources */,

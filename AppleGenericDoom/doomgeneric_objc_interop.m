@@ -1,5 +1,14 @@
+//
+//  doomgeneric_objc.m
+//  AppleGenericDoom
+//
+//  Created by Tanner W. Stokes on 7/9/23.
+//
+
+#import <Foundation/Foundation.h>
+#import <AppleGenericDoom-Swift.h>
 #include "doomkeys.h"
-#include "m_argv.h"
+//#include "m_argv.h"
 #include "doomgeneric.h"
 
 #include <stdio.h>
@@ -12,6 +21,9 @@
 static unsigned short s_KeyQueue[KEYQUEUE_SIZE];
 static unsigned int s_KeyQueueWriteIndex = 0;
 static unsigned int s_KeyQueueReadIndex = 0;
+static DoomGenericSwift *dgs;
+static uint32_t ticks = 0;
+
 
 static unsigned char convertToDoomKey(unsigned int key){
     return 0;
@@ -32,21 +44,23 @@ static void handleKeyInput(){
 
 void DG_Init()
 {
-    printf("DG_Init called\n");
+    dgs = [DoomGenericSwift shared];
 }
 
 void DG_DrawFrame()
 {
-    printf("DG_DrawFrame called\n");
+    ticks++;
+    [dgs DG_DrawFrame];
 }
 
 void DG_SleepMs(uint32_t ms)
 {
+    [NSThread sleepForTimeInterval:ms/1000];
 }
 
 uint32_t DG_GetTicksMs()
 {
-    return 0;
+    return ticks;
 }
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
