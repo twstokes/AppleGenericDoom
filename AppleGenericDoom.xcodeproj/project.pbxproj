@@ -94,6 +94,7 @@
 		C34940FC2A5A555400E5855C /* mus2mid.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A42A5A555200E5855C /* mus2mid.c */; };
 		C34940FD2A5A555400E5855C /* f_wipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A52A5A555200E5855C /* f_wipe.c */; };
 		C34940FE2A5A555400E5855C /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
+		C34941002A5A55F600E5855C /* doomgeneric_apple.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -283,6 +284,7 @@
 		C34940A72A5A555300E5855C /* p_floor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p_floor.c; sourceTree = "<group>"; };
 		C34940A82A5A555300E5855C /* r_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = r_data.h; sourceTree = "<group>"; };
 		C34940A92A5A555300E5855C /* w_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = w_main.h; sourceTree = "<group>"; };
+		C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = doomgeneric_apple.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 			children = (
 				C3493FE32A5A547300E5855C /* AppDelegate.swift */,
 				C3493FE52A5A547300E5855C /* ViewController.swift */,
+				C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */,
 				C3493FE72A5A547400E5855C /* Assets.xcassets */,
 				C3493FE92A5A547400E5855C /* Main.storyboard */,
 				C3493FEC2A5A547400E5855C /* AppleGenericDoom.entitlements */,
@@ -608,6 +611,7 @@
 				C34940EE2A5A555400E5855C /* p_maputl.c in Sources */,
 				C34940C62A5A555400E5855C /* doomgeneric.c in Sources */,
 				C34940D62A5A555400E5855C /* memio.c in Sources */,
+				C34941002A5A55F600E5855C /* doomgeneric_apple.c in Sources */,
 				C34940FC2A5A555400E5855C /* mus2mid.c in Sources */,
 				C34940E72A5A555400E5855C /* i_joystick.c in Sources */,
 				C34940BF2A5A555400E5855C /* m_random.c in Sources */,
