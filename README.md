@@ -5,3 +5,4 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 ### TODO:
 - implement the functions identified [here](https://github.com/ozkl/doomgeneric#porting)
 - interface nicely to Swift so we don't have to do as much in C
+- consider bringing in doomgeneric as a Git submodule and only adding the files we need to compile
