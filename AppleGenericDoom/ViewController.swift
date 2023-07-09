@@ -13,11 +13,11 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // start up DOOM
-        // doomgeneric_Create()
+        doomgeneric_Create(0, nil)
 
-        /* while true {
+        while true {
             doomgeneric_Tick()
-        } */
+        }
     }
 
     override var representedObject: Any? {

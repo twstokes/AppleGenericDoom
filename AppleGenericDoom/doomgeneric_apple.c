@@ -18,23 +18,26 @@ static unsigned char convertToDoomKey(unsigned int key){
 }
 
 static void addKeyToQueue(int pressed, unsigned int keyCode){
-  unsigned char key = convertToDoomKey(keyCode);
+    unsigned char key = convertToDoomKey(keyCode);
 
-  unsigned short keyData = (pressed << 8) | key;
+    unsigned short keyData = (pressed << 8) | key;
 
-  s_KeyQueue[s_KeyQueueWriteIndex] = keyData;
-  s_KeyQueueWriteIndex++;
-  s_KeyQueueWriteIndex %= KEYQUEUE_SIZE;
+    s_KeyQueue[s_KeyQueueWriteIndex] = keyData;
+    s_KeyQueueWriteIndex++;
+    s_KeyQueueWriteIndex %= KEYQUEUE_SIZE;
 }
+
 static void handleKeyInput(){
 }
 
-
-void DG_Init(){
+void DG_Init()
+{
+    printf("DG_Init called\n");
 }
 
 void DG_DrawFrame()
 {
+    printf("DG_DrawFrame called\n");
 }
 
 void DG_SleepMs(uint32_t ms)
@@ -67,4 +70,5 @@ int DG_GetKey(int* pressed, unsigned char* doomKey)
 
 void DG_SetWindowTitle(const char * title)
 {
+    printf("DG_SetWindowTitle called\n");
 }
