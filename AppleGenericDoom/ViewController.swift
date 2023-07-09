@@ -6,34 +6,44 @@
 //
 
 import Cocoa
+import SpriteKit
 
 class ViewController: NSViewController {
+    private var scene: DoomScene!
+    private var node: SKSpriteNode?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let skview = SKView(frame: .init(origin: .zero, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY))))
+        view.addSubview(skview)
 
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.red.cgColor
-        print(view.frame)
+        scene = DoomScene(size: view.bounds.size)
+        scene.scaleMode = .resizeFill
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
+        skview.presentScene(scene)
         startDoom()
     }
 
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        preferredContentSize = NSSize(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY))
+    }
+
+
     private func startDoom() {
-        DoomGenericSwift.shared().frameDrawCallback = { buffer in
-            print("Frame draw callback fired! Buffer size: \(buffer.count)")
+        DoomGenericSwift.shared().frameDrawCallback = { data in
+            let newTexture = SKTexture(data: data, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY)), flipped: true)
+
+            if let node = self.node {
+                node.texture = newTexture
+            } else {
+                let node = SKSpriteNode(texture: newTexture)
+                node.texture = newTexture
+                self.scene.addChild(node)
+                self.node = node
+            }
         }
-
-        // start up DOOM
-        doomgeneric_Create(0, nil)
-
-//        while true {
-            doomgeneric_Tick()
-            doomgeneric_Tick()
-            doomgeneric_Tick()
-            doomgeneric_Tick()
-            doomgeneric_Tick()
-            doomgeneric_Tick()
-//        }
     }
 
     override var representedObject: Any? {

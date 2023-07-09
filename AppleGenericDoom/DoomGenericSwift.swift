@@ -12,7 +12,7 @@ import Foundation
         return DoomGenericSwift()
     }()
 
-    var frameDrawCallback: (([uint32]) -> Void)?
+    var frameDrawCallback: ((Data) -> Void)?
 
     override init() {
         super.init()
@@ -20,9 +20,8 @@ import Foundation
     }
 
     @objc func DG_DrawFrame() {
-        print("Swift DG_DrawFrame called")
-        let buffer = Array(UnsafeBufferPointer(start: DG_ScreenBuffer, count: Int(DOOMGENERIC_RESX) * Int(DOOMGENERIC_RESY) * 4))
-        frameDrawCallback?(buffer)
+        let data = Data(bytes: DG_ScreenBuffer, count: Int(DOOMGENERIC_RESX) * Int(DOOMGENERIC_RESY) * 4)
+        frameDrawCallback?(data)
     }
 
     // we use a singleton pattern to avoid passing around an instance
