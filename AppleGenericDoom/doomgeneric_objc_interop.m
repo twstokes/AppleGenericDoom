@@ -22,7 +22,7 @@ static unsigned short s_KeyQueue[KEYQUEUE_SIZE];
 static unsigned int s_KeyQueueWriteIndex = 0;
 static unsigned int s_KeyQueueReadIndex = 0;
 static DoomGenericSwift *dgs;
-static uint32_t ticks = 0;
+static CFAbsoluteTime timeInSeconds = 0;
 
 
 static unsigned char convertToDoomKey(unsigned int key){
@@ -45,11 +45,11 @@ static void handleKeyInput(){
 void DG_Init()
 {
     dgs = [DoomGenericSwift shared];
+    timeInSeconds = CFAbsoluteTimeGetCurrent();
 }
 
 void DG_DrawFrame()
 {
-    ticks++;
     [dgs DG_DrawFrame];
 }
 
@@ -60,7 +60,7 @@ void DG_SleepMs(uint32_t ms)
 
 uint32_t DG_GetTicksMs()
 {
-    return ticks;
+    return (CFAbsoluteTimeGetCurrent() - timeInSeconds) * 1000;
 }
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
