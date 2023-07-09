@@ -301,7 +301,6 @@
 		C3493FD72A5A547300E5855C = {
 			isa = PBXGroup;
 			children = (
-				C3493FF22A5A54BB00E5855C /* doomgeneric */,
 				C3493FE22A5A547300E5855C /* AppleGenericDoom */,
 				C3493FE12A5A547300E5855C /* Products */,
 			);
@@ -318,9 +317,11 @@
 		C3493FE22A5A547300E5855C /* AppleGenericDoom */ = {
 			isa = PBXGroup;
 			children = (
+				C3493FF22A5A54BB00E5855C /* doomgeneric */,
 				C3493FE32A5A547300E5855C /* AppDelegate.swift */,
 				C3493FE52A5A547300E5855C /* ViewController.swift */,
 				C34940FF2A5A55F600E5855C /* doomgeneric_apple.c */,
+				C3493FF32A5A552A00E5855C /* AppleGenericDoom-Bridging-Header.h */,
 				C3493FE72A5A547400E5855C /* Assets.xcassets */,
 				C3493FE92A5A547400E5855C /* Main.storyboard */,
 				C3493FEC2A5A547400E5855C /* AppleGenericDoom.entitlements */,
@@ -510,7 +511,6 @@
 				C349403C2A5A553A00E5855C /* wi_stuff.h */,
 				C3493FF92A5A552C00E5855C /* z_zone.c */,
 				C34940892A5A554B00E5855C /* z_zone.h */,
-				C3493FF32A5A552A00E5855C /* AppleGenericDoom-Bridging-Header.h */,
 			);
 			path = doomgeneric;
 			sourceTree = "<group>";
@@ -826,7 +826,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "doomgeneric/AppleGenericDoom-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleGenericDoom/AppleGenericDoom-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -856,7 +856,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "doomgeneric/AppleGenericDoom-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleGenericDoom/AppleGenericDoom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
