@@ -55,6 +55,8 @@
 #include <CoreFoundation/CFUserNotification.h>
 #endif
 
+#include "TargetConditionals.h"
+
 #define DEFAULT_RAM 6 /* MiB */
 #define MIN_RAM     6  /* MiB */
 
@@ -271,7 +273,11 @@ void I_Quit (void)
 
 static int ZenityAvailable(void)
 {
+#ifdef TARGET_OS_WATCH
+    return 0;
+#else
     return system(ZENITY_BINARY " --help >/dev/null 2>&1") == 0;
+#endif
 }
 
 // Escape special characters in the given string so that they can be
@@ -322,6 +328,9 @@ static char *EscapeShellString(char *string)
 
 static int ZenityErrorBox(char *message)
 {
+#ifdef TARGET_OS_WATCH
+    return 0;
+#else
     int result;
     char *escaped_message;
     char *errorboxpath;
@@ -345,6 +354,7 @@ static int ZenityErrorBox(char *message)
     free(escaped_message);
 
     return result;
+#endif
 }
 
 #endif /* !defined(_WIN32) && !defined(__MACOSX__) */

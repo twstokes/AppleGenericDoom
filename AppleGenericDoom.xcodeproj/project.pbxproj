@@ -10,6 +10,97 @@
 		C31D8E5E2A5B0C3B0062F401 /* doomgeneric_objc_interop.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */; };
 		C31D8E602A5B0DB30062F401 /* DoomGenericSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */; };
 		C34071832A5B4039001FAD58 /* DoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071822A5B4039001FAD58 /* DoomScene.swift */; };
+		C340718C2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C34071912A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071902A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift */; };
+		C34071932A5B5177001FAD58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071922A5B5177001FAD58 /* ContentView.swift */; };
+		C34071952A5B5178001FAD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34071942A5B5178001FAD58 /* Assets.xcassets */; };
+		C34071982A5B5178001FAD58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34071972A5B5178001FAD58 /* Preview Assets.xcassets */; };
+		C34071A02A5B5224001FAD58 /* DoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071822A5B4039001FAD58 /* DoomScene.swift */; };
+		C34071A12A5B5349001FAD58 /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
+		C34071A22A5B5349001FAD58 /* icon.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940252A5A553500E5855C /* icon.c */; };
+		C34071A32A5B5349001FAD58 /* m_controls.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF42A5A552B00E5855C /* m_controls.c */; };
+		C34071A42A5B5349001FAD58 /* p_saveg.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940402A5A553B00E5855C /* p_saveg.c */; };
+		C34071A52A5B5349001FAD58 /* p_switch.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940792A5A554700E5855C /* p_switch.c */; };
+		C34071A62A5B5349001FAD58 /* r_bsp.c in Sources */ = {isa = PBXBuildFile; fileRef = C349405B2A5A554100E5855C /* r_bsp.c */; };
+		C34071A72A5B5349001FAD58 /* mus2mid.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A42A5A555200E5855C /* mus2mid.c */; };
+		C34071A82A5B5349001FAD58 /* v_video.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A12A5A555100E5855C /* v_video.c */; };
+		C34071A92A5B5349001FAD58 /* r_segs.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940992A5A554F00E5855C /* r_segs.c */; };
+		C34071AA2A5B5349001FAD58 /* i_video.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940602A5A554200E5855C /* i_video.c */; };
+		C34071AB2A5B5349001FAD58 /* d_iwad.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940152A5A553100E5855C /* d_iwad.c */; };
+		C34071AC2A5B5349001FAD58 /* d_net.c in Sources */ = {isa = PBXBuildFile; fileRef = C349407F2A5A554900E5855C /* d_net.c */; };
+		C34071AD2A5B5349001FAD58 /* w_file_stdc.c in Sources */ = {isa = PBXBuildFile; fileRef = C349409E2A5A555100E5855C /* w_file_stdc.c */; };
+		C34071AE2A5B5349001FAD58 /* i_input.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF82A5A552B00E5855C /* i_input.c */; };
+		C34071AF2A5B5349001FAD58 /* i_system.c in Sources */ = {isa = PBXBuildFile; fileRef = C349404A2A5A553D00E5855C /* i_system.c */; };
+		C34071B02A5B5349001FAD58 /* d_main.c in Sources */ = {isa = PBXBuildFile; fileRef = C349404D2A5A553E00E5855C /* d_main.c */; };
+		C34071B12A5B5349001FAD58 /* r_data.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940692A5A554400E5855C /* r_data.c */; };
+		C34071B22A5B5349001FAD58 /* d_loop.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940642A5A554300E5855C /* d_loop.c */; };
+		C34071B32A5B5349001FAD58 /* d_mode.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940262A5A553500E5855C /* d_mode.c */; };
+		C34071B42A5B5349001FAD58 /* hu_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940202A5A553400E5855C /* hu_stuff.c */; };
+		C34071B52A5B5349001FAD58 /* i_sound.c in Sources */ = {isa = PBXBuildFile; fileRef = C349403B2A5A553A00E5855C /* i_sound.c */; };
+		C34071B62A5B5349001FAD58 /* r_draw.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940662A5A554300E5855C /* r_draw.c */; };
+		C34071B72A5B5349001FAD58 /* r_plane.c in Sources */ = {isa = PBXBuildFile; fileRef = C349407A2A5A554700E5855C /* r_plane.c */; };
+		C34071B82A5B5349001FAD58 /* m_menu.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940452A5A553C00E5855C /* m_menu.c */; };
+		C34071B92A5B5349001FAD58 /* m_fixed.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940012A5A552D00E5855C /* m_fixed.c */; };
+		C34071BA2A5B5349001FAD58 /* i_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940972A5A554E00E5855C /* i_timer.c */; };
+		C34071BB2A5B5349001FAD58 /* m_misc.c in Sources */ = {isa = PBXBuildFile; fileRef = C349401E2A5A553300E5855C /* m_misc.c */; };
+		C34071BC2A5B5349001FAD58 /* memio.c in Sources */ = {isa = PBXBuildFile; fileRef = C349404F2A5A553E00E5855C /* memio.c */; };
+		C34071BD2A5B5349001FAD58 /* w_checksum.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF62A5A552B00E5855C /* w_checksum.c */; };
+		C34071BE2A5B5349001FAD58 /* m_config.c in Sources */ = {isa = PBXBuildFile; fileRef = C349408D2A5A554C00E5855C /* m_config.c */; };
+		C34071BF2A5B5349001FAD58 /* w_main.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FFB2A5A552C00E5855C /* w_main.c */; };
+		C34071C02A5B5349001FAD58 /* dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940382A5A553900E5855C /* dummy.c */; };
+		C34071C12A5B5349001FAD58 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940392A5A553900E5855C /* sha1.c */; };
+		C34071C22A5B5349001FAD58 /* w_file.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940632A5A554200E5855C /* w_file.c */; };
+		C34071C32A5B5349001FAD58 /* p_plats.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940782A5A554700E5855C /* p_plats.c */; };
+		C34071C42A5B5349001FAD58 /* i_cdmus.c in Sources */ = {isa = PBXBuildFile; fileRef = C349408C2A5A554C00E5855C /* i_cdmus.c */; };
+		C34071C52A5B5349001FAD58 /* p_pspr.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940652A5A554300E5855C /* p_pspr.c */; };
+		C34071C62A5B5349001FAD58 /* st_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940872A5A554B00E5855C /* st_stuff.c */; };
+		C34071C72A5B5349001FAD58 /* dstrings.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940832A5A554900E5855C /* dstrings.c */; };
+		C34071C82A5B5349001FAD58 /* m_random.c in Sources */ = {isa = PBXBuildFile; fileRef = C349401D2A5A553300E5855C /* m_random.c */; };
+		C34071C92A5B5349001FAD58 /* i_endoom.c in Sources */ = {isa = PBXBuildFile; fileRef = C349403E2A5A553A00E5855C /* i_endoom.c */; };
+		C34071CA2A5B5349001FAD58 /* p_spec.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FFD2A5A552C00E5855C /* p_spec.c */; };
+		C34071CB2A5B5349001FAD58 /* w_wad.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940172A5A553200E5855C /* w_wad.c */; };
+		C34071CC2A5B5349001FAD58 /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940762A5A554700E5855C /* info.c */; };
+		C34071CD2A5B5349001FAD58 /* p_tick.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FFE2A5A552D00E5855C /* p_tick.c */; };
+		C34071CE2A5B5349001FAD58 /* z_zone.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF92A5A552C00E5855C /* z_zone.c */; };
+		C34071CF2A5B5349001FAD58 /* doomstat.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940072A5A552E00E5855C /* doomstat.c */; };
+		C34071D02A5B5349001FAD58 /* r_main.c in Sources */ = {isa = PBXBuildFile; fileRef = C349405C2A5A554100E5855C /* r_main.c */; };
+		C34071D12A5B5349001FAD58 /* i_joystick.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940732A5A554600E5855C /* i_joystick.c */; };
+		C34071D22A5B5349001FAD58 /* m_bbox.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940962A5A554E00E5855C /* m_bbox.c */; };
+		C34071D32A5B5349001FAD58 /* g_game.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940582A5A554000E5855C /* g_game.c */; };
+		C34071D42A5B5349001FAD58 /* hu_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940232A5A553400E5855C /* hu_lib.c */; };
+		C34071D52A5B5349001FAD58 /* p_mobj.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940302A5A553700E5855C /* p_mobj.c */; };
+		C34071D62A5B5349001FAD58 /* am_map.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940612A5A554200E5855C /* am_map.c */; };
+		C34071D72A5B5349001FAD58 /* gusconf.c in Sources */ = {isa = PBXBuildFile; fileRef = C349401B2A5A553300E5855C /* gusconf.c */; };
+		C34071D82A5B5349001FAD58 /* p_ceilng.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940482A5A553D00E5855C /* p_ceilng.c */; };
+		C34071D92A5B5349001FAD58 /* p_maputl.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940822A5A554900E5855C /* p_maputl.c */; };
+		C34071DA2A5B5349001FAD58 /* sounds.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940472A5A553C00E5855C /* sounds.c */; };
+		C34071DB2A5B5349001FAD58 /* p_setup.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940842A5A554A00E5855C /* p_setup.c */; };
+		C34071DC2A5B5349001FAD58 /* p_doors.c in Sources */ = {isa = PBXBuildFile; fileRef = C349400D2A5A553000E5855C /* p_doors.c */; };
+		C34071DD2A5B5349001FAD58 /* d_event.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940142A5A553100E5855C /* d_event.c */; };
+		C34071DE2A5B5349001FAD58 /* doomdef.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940132A5A553100E5855C /* doomdef.c */; };
+		C34071DF2A5B5349001FAD58 /* f_wipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A52A5A555200E5855C /* f_wipe.c */; };
+		C34071E02A5B5349001FAD58 /* r_things.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940522A5A553F00E5855C /* r_things.c */; };
+		C34071E12A5B5349001FAD58 /* s_sound.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940372A5A553900E5855C /* s_sound.c */; };
+		C34071E22A5B5349001FAD58 /* d_items.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940712A5A554500E5855C /* d_items.c */; };
+		C34071E32A5B5349001FAD58 /* m_cheat.c in Sources */ = {isa = PBXBuildFile; fileRef = C349407B2A5A554800E5855C /* m_cheat.c */; };
+		C34071E42A5B5349001FAD58 /* p_sight.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940562A5A554000E5855C /* p_sight.c */; };
+		C34071E52A5B5349001FAD58 /* r_sky.c in Sources */ = {isa = PBXBuildFile; fileRef = C349404C2A5A553D00E5855C /* r_sky.c */; };
+		C34071E62A5B5349001FAD58 /* st_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940852A5A554A00E5855C /* st_lib.c */; };
+		C34071E72A5B5349001FAD58 /* f_finale.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940532A5A553F00E5855C /* f_finale.c */; };
+		C34071E82A5B5349001FAD58 /* p_lights.c in Sources */ = {isa = PBXBuildFile; fileRef = C349409C2A5A555000E5855C /* p_lights.c */; };
+		C34071E92A5B5349001FAD58 /* p_telept.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940512A5A553F00E5855C /* p_telept.c */; };
+		C34071EA2A5B5349001FAD58 /* statdump.c in Sources */ = {isa = PBXBuildFile; fileRef = C349400B2A5A552F00E5855C /* statdump.c */; };
+		C34071EB2A5B5349001FAD58 /* m_argv.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940162A5A553200E5855C /* m_argv.c */; };
+		C34071EC2A5B5349001FAD58 /* p_map.c in Sources */ = {isa = PBXBuildFile; fileRef = C349402A2A5A553600E5855C /* p_map.c */; };
+		C34071ED2A5B5349001FAD58 /* doomgeneric.c in Sources */ = {isa = PBXBuildFile; fileRef = C349402C2A5A553600E5855C /* doomgeneric.c */; };
+		C34071EE2A5B5349001FAD58 /* p_user.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940332A5A553800E5855C /* p_user.c */; };
+		C34071EF2A5B5349001FAD58 /* i_scale.c in Sources */ = {isa = PBXBuildFile; fileRef = C349401C2A5A553300E5855C /* i_scale.c */; };
+		C34071F02A5B5349001FAD58 /* wi_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FFF2A5A552D00E5855C /* wi_stuff.c */; };
+		C34071F12A5B5349001FAD58 /* p_enemy.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940682A5A554300E5855C /* p_enemy.c */; };
+		C34071F22A5B5349001FAD58 /* tables.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940932A5A554D00E5855C /* tables.c */; };
+		C34071F32A5B5349001FAD58 /* p_inter.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF52A5A552B00E5855C /* p_inter.c */; };
+		C34071F42A5B5358001FAD58 /* doomgeneric_objc_interop.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */; };
+		C34071F52A5B5567001FAD58 /* DoomGenericSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */; };
 		C3493FE42A5A547300E5855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE32A5A547300E5855C /* AppDelegate.swift */; };
 		C3493FE62A5A547300E5855C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE52A5A547300E5855C /* ViewController.swift */; };
 		C3493FE82A5A547400E5855C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3493FE72A5A547400E5855C /* Assets.xcassets */; };
@@ -99,10 +190,40 @@
 		C34940FE2A5A555400E5855C /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C340718D2A5B5177001FAD58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3493FD82A5A547300E5855C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C340718A2A5B5177001FAD58;
+			remoteInfo = "AppleGenericDoomWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C340719C2A5B5178001FAD58 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C340718C2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doomgeneric_objc_interop.m; sourceTree = "<group>"; };
 		C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoomGenericSwift.swift; sourceTree = "<group>"; };
 		C34071822A5B4039001FAD58 /* DoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoomScene.swift; sourceTree = "<group>"; };
+		C34071862A5B5177001FAD58 /* AppleGenericDoomWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleGenericDoomWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleGenericDoomWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34071902A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleGenericDoomWatchApp.swift; sourceTree = "<group>"; };
+		C34071922A5B5177001FAD58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C34071942A5B5178001FAD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C34071972A5B5178001FAD58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3493FE02A5A547300E5855C /* AppleGenericDoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleGenericDoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3493FE32A5A547300E5855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3493FE52A5A547300E5855C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +413,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C34071882A5B5177001FAD58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3493FDD2A5A547300E5855C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,10 +430,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C340718F2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				C34071902A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift */,
+				C34071922A5B5177001FAD58 /* ContentView.swift */,
+				C34071942A5B5178001FAD58 /* Assets.xcassets */,
+				C34071962A5B5178001FAD58 /* Preview Content */,
+			);
+			path = "AppleGenericDoomWatch Watch App";
+			sourceTree = "<group>";
+		};
+		C34071962A5B5178001FAD58 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C34071972A5B5178001FAD58 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		C3493FD72A5A547300E5855C = {
 			isa = PBXGroup;
 			children = (
 				C3493FE22A5A547300E5855C /* AppleGenericDoom */,
+				C340718F2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */,
 				C3493FE12A5A547300E5855C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -314,6 +462,8 @@
 			isa = PBXGroup;
 			children = (
 				C3493FE02A5A547300E5855C /* AppleGenericDoom.app */,
+				C34071862A5B5177001FAD58 /* AppleGenericDoomWatch.app */,
+				C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -524,6 +674,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C34071852A5B5177001FAD58 /* AppleGenericDoomWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C340719D2A5B5178001FAD58 /* Build configuration list for PBXNativeTarget "AppleGenericDoomWatch" */;
+			buildPhases = (
+				C34071842A5B5177001FAD58 /* Resources */,
+				C340719C2A5B5178001FAD58 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C340718E2A5B5177001FAD58 /* PBXTargetDependency */,
+			);
+			name = AppleGenericDoomWatch;
+			productName = AppleGenericDoomWatch;
+			productReference = C34071862A5B5177001FAD58 /* AppleGenericDoomWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		C340718A2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C34071992A5B5178001FAD58 /* Build configuration list for PBXNativeTarget "AppleGenericDoomWatch Watch App" */;
+			buildPhases = (
+				C34071872A5B5177001FAD58 /* Sources */,
+				C34071882A5B5177001FAD58 /* Frameworks */,
+				C34071892A5B5177001FAD58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AppleGenericDoomWatch Watch App";
+			productName = "AppleGenericDoomWatch Watch App";
+			productReference = C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C3493FDF2A5A547300E5855C /* AppleGenericDoom */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3493FEF2A5A547400E5855C /* Build configuration list for PBXNativeTarget "AppleGenericDoom" */;
@@ -551,6 +735,12 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					C34071852A5B5177001FAD58 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					C340718A2A5B5177001FAD58 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					C3493FDF2A5A547300E5855C = {
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
@@ -571,11 +761,29 @@
 			projectRoot = "";
 			targets = (
 				C3493FDF2A5A547300E5855C /* AppleGenericDoom */,
+				C34071852A5B5177001FAD58 /* AppleGenericDoomWatch */,
+				C340718A2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C34071842A5B5177001FAD58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34071892A5B5177001FAD58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34071982A5B5178001FAD58 /* Preview Assets.xcassets in Resources */,
+				C34071952A5B5178001FAD58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3493FDE2A5A547300E5855C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,6 +796,101 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C34071872A5B5177001FAD58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34071E52A5B5349001FAD58 /* r_sky.c in Sources */,
+				C34071A22A5B5349001FAD58 /* icon.c in Sources */,
+				C34071B02A5B5349001FAD58 /* d_main.c in Sources */,
+				C34071AD2A5B5349001FAD58 /* w_file_stdc.c in Sources */,
+				C34071F02A5B5349001FAD58 /* wi_stuff.c in Sources */,
+				C34071CD2A5B5349001FAD58 /* p_tick.c in Sources */,
+				C34071D22A5B5349001FAD58 /* m_bbox.c in Sources */,
+				C34071DC2A5B5349001FAD58 /* p_doors.c in Sources */,
+				C34071CF2A5B5349001FAD58 /* doomstat.c in Sources */,
+				C34071EF2A5B5349001FAD58 /* i_scale.c in Sources */,
+				C34071AF2A5B5349001FAD58 /* i_system.c in Sources */,
+				C34071A72A5B5349001FAD58 /* mus2mid.c in Sources */,
+				C34071E12A5B5349001FAD58 /* s_sound.c in Sources */,
+				C34071D52A5B5349001FAD58 /* p_mobj.c in Sources */,
+				C34071E02A5B5349001FAD58 /* r_things.c in Sources */,
+				C34071EE2A5B5349001FAD58 /* p_user.c in Sources */,
+				C34071C42A5B5349001FAD58 /* i_cdmus.c in Sources */,
+				C34071E32A5B5349001FAD58 /* m_cheat.c in Sources */,
+				C34071E72A5B5349001FAD58 /* f_finale.c in Sources */,
+				C34071932A5B5177001FAD58 /* ContentView.swift in Sources */,
+				C34071BD2A5B5349001FAD58 /* w_checksum.c in Sources */,
+				C34071D82A5B5349001FAD58 /* p_ceilng.c in Sources */,
+				C34071E62A5B5349001FAD58 /* st_lib.c in Sources */,
+				C34071BE2A5B5349001FAD58 /* m_config.c in Sources */,
+				C34071A02A5B5224001FAD58 /* DoomScene.swift in Sources */,
+				C34071C22A5B5349001FAD58 /* w_file.c in Sources */,
+				C34071F52A5B5567001FAD58 /* DoomGenericSwift.swift in Sources */,
+				C34071C72A5B5349001FAD58 /* dstrings.c in Sources */,
+				C34071BA2A5B5349001FAD58 /* i_timer.c in Sources */,
+				C34071C02A5B5349001FAD58 /* dummy.c in Sources */,
+				C34071ED2A5B5349001FAD58 /* doomgeneric.c in Sources */,
+				C34071B22A5B5349001FAD58 /* d_loop.c in Sources */,
+				C34071C32A5B5349001FAD58 /* p_plats.c in Sources */,
+				C34071C12A5B5349001FAD58 /* sha1.c in Sources */,
+				C34071A42A5B5349001FAD58 /* p_saveg.c in Sources */,
+				C34071CB2A5B5349001FAD58 /* w_wad.c in Sources */,
+				C34071EC2A5B5349001FAD58 /* p_map.c in Sources */,
+				C34071F22A5B5349001FAD58 /* tables.c in Sources */,
+				C34071DF2A5B5349001FAD58 /* f_wipe.c in Sources */,
+				C34071B72A5B5349001FAD58 /* r_plane.c in Sources */,
+				C34071E42A5B5349001FAD58 /* p_sight.c in Sources */,
+				C34071AB2A5B5349001FAD58 /* d_iwad.c in Sources */,
+				C34071D42A5B5349001FAD58 /* hu_lib.c in Sources */,
+				C34071A52A5B5349001FAD58 /* p_switch.c in Sources */,
+				C34071BC2A5B5349001FAD58 /* memio.c in Sources */,
+				C34071E82A5B5349001FAD58 /* p_lights.c in Sources */,
+				C34071B52A5B5349001FAD58 /* i_sound.c in Sources */,
+				C34071912A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift in Sources */,
+				C34071D02A5B5349001FAD58 /* r_main.c in Sources */,
+				C34071A62A5B5349001FAD58 /* r_bsp.c in Sources */,
+				C34071EA2A5B5349001FAD58 /* statdump.c in Sources */,
+				C34071DA2A5B5349001FAD58 /* sounds.c in Sources */,
+				C34071C92A5B5349001FAD58 /* i_endoom.c in Sources */,
+				C34071B62A5B5349001FAD58 /* r_draw.c in Sources */,
+				C34071F42A5B5358001FAD58 /* doomgeneric_objc_interop.m in Sources */,
+				C34071EB2A5B5349001FAD58 /* m_argv.c in Sources */,
+				C34071E22A5B5349001FAD58 /* d_items.c in Sources */,
+				C34071BF2A5B5349001FAD58 /* w_main.c in Sources */,
+				C34071CA2A5B5349001FAD58 /* p_spec.c in Sources */,
+				C34071B12A5B5349001FAD58 /* r_data.c in Sources */,
+				C34071A92A5B5349001FAD58 /* r_segs.c in Sources */,
+				C34071B92A5B5349001FAD58 /* m_fixed.c in Sources */,
+				C34071C52A5B5349001FAD58 /* p_pspr.c in Sources */,
+				C34071B42A5B5349001FAD58 /* hu_stuff.c in Sources */,
+				C34071B82A5B5349001FAD58 /* m_menu.c in Sources */,
+				C34071AE2A5B5349001FAD58 /* i_input.c in Sources */,
+				C34071E92A5B5349001FAD58 /* p_telept.c in Sources */,
+				C34071C62A5B5349001FAD58 /* st_stuff.c in Sources */,
+				C34071AA2A5B5349001FAD58 /* i_video.c in Sources */,
+				C34071F32A5B5349001FAD58 /* p_inter.c in Sources */,
+				C34071CE2A5B5349001FAD58 /* z_zone.c in Sources */,
+				C34071A12A5B5349001FAD58 /* p_floor.c in Sources */,
+				C34071AC2A5B5349001FAD58 /* d_net.c in Sources */,
+				C34071A82A5B5349001FAD58 /* v_video.c in Sources */,
+				C34071C82A5B5349001FAD58 /* m_random.c in Sources */,
+				C34071BB2A5B5349001FAD58 /* m_misc.c in Sources */,
+				C34071D32A5B5349001FAD58 /* g_game.c in Sources */,
+				C34071DB2A5B5349001FAD58 /* p_setup.c in Sources */,
+				C34071DE2A5B5349001FAD58 /* doomdef.c in Sources */,
+				C34071D92A5B5349001FAD58 /* p_maputl.c in Sources */,
+				C34071A32A5B5349001FAD58 /* m_controls.c in Sources */,
+				C34071D62A5B5349001FAD58 /* am_map.c in Sources */,
+				C34071D12A5B5349001FAD58 /* i_joystick.c in Sources */,
+				C34071B32A5B5349001FAD58 /* d_mode.c in Sources */,
+				C34071CC2A5B5349001FAD58 /* info.c in Sources */,
+				C34071D72A5B5349001FAD58 /* gusconf.c in Sources */,
+				C34071DD2A5B5349001FAD58 /* d_event.c in Sources */,
+				C34071F12A5B5349001FAD58 /* p_enemy.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3493FDC2A5A547300E5855C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,6 +988,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C340718E2A5B5177001FAD58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C340718A2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */;
+			targetProxy = C340718D2A5B5177001FAD58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C3493FE92A5A547400E5855C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -697,6 +1008,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C340719A2A5B5178001FAD58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleGenericDoomWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = AE76EV48ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleGenericDoom/AppleGenericDoom-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		C340719B2A5B5178001FAD58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AppleGenericDoomWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = AE76EV48ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleGenericDoom/AppleGenericDoom-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		C340719E2A5B5178001FAD58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AE76EV48ND;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C340719F2A5B5178001FAD58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AE76EV48ND;
+				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		C3493FED2A5A547400E5855C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -874,6 +1281,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C34071992A5B5178001FAD58 /* Build configuration list for PBXNativeTarget "AppleGenericDoomWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340719A2A5B5178001FAD58 /* Debug */,
+				C340719B2A5B5178001FAD58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C340719D2A5B5178001FAD58 /* Build configuration list for PBXNativeTarget "AppleGenericDoomWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340719E2A5B5178001FAD58 /* Debug */,
+				C340719F2A5B5178001FAD58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C3493FDB2A5A547300E5855C /* Build configuration list for PBXProject "AppleGenericDoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

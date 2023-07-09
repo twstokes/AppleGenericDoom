@@ -19,7 +19,6 @@ class DoomScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         doomgeneric_Tick()
