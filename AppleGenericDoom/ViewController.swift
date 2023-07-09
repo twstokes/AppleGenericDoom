@@ -12,7 +12,12 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // start up DOOM
+        // doomgeneric_Create()
+
+        /* while true {
+            doomgeneric_Tick()
+        } */
     }
 
     override var representedObject: Any? {
