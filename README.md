@@ -4,7 +4,10 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 
 | macOS | Apple Watch |
 | - | - |
-| <img alt="Doom on macOS" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/b3e671bb-238d-4067-9666-a1beea965c1e"> | <img alt="Doom on Apple Watch" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/a31010e4-a992-4891-8333-1f56dff07c15"> |
+| <img alt="DOOM on macOS" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/40b54b8c-ac1b-49a7-bbc7-c0674d4b82fe"> | <img alt="DOOM on watchOS" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/cf3ae161-735a-422a-9ad8-1fd11f6f83f6"> |
+
+
+
 
 - macOS has sound via SDL2
 - watchOS currently does not have sound
