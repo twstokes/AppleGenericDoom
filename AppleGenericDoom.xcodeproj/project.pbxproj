@@ -189,18 +189,12 @@
 		C34940FC2A5A555400E5855C /* mus2mid.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A42A5A555200E5855C /* mus2mid.c */; };
 		C34940FD2A5A555400E5855C /* f_wipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A52A5A555200E5855C /* f_wipe.c */; };
 		C34940FE2A5A555400E5855C /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
-		C38BFFB42A5BB42F005A5D83 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C38BFFB52A5BB453005A5D83 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; };
-		C38BFFB62A5BB453005A5D83 /* SDL2_mixer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C38BFFB72A5BB52B005A5D83 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; };
 		C38BFFB82A5BB52B005A5D83 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C38BFFBA2A5BB535005A5D83 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; };
 		C38BFFBB2A5BB535005A5D83 /* SDL2_mixer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C38BFFBD2A5BB628005A5D83 /* i_sdlmusic.c in Sources */ = {isa = PBXBuildFile; fileRef = C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */; };
-		C38BFFBE2A5BB628005A5D83 /* i_sdlmusic.c in Sources */ = {isa = PBXBuildFile; fileRef = C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */; };
 		C3A9FBDB2A5BA68A0059DCEC /* i_sdlsound.c in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */; };
-		C3A9FBDC2A5BA68A0059DCEC /* i_sdlsound.c in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */; };
-		C3A9FBDF2A5BAB2C0059DCEC /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,18 +227,6 @@
 			files = (
 				C38BFFB82A5BB52B005A5D83 /* SDL2.framework in Embed Frameworks */,
 				C38BFFBB2A5BB535005A5D83 /* SDL2_mixer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3A9FBE12A5BAB2C0059DCEC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C38BFFB42A5BB42F005A5D83 /* SDL2.framework in Embed Frameworks */,
-				C38BFFB62A5BB453005A5D83 /* SDL2_mixer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,8 +441,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3A9FBDF2A5BAB2C0059DCEC /* SDL2.framework in Frameworks */,
-				C38BFFB52A5BB453005A5D83 /* SDL2_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,7 +737,6 @@
 				C34071872A5B5177001FAD58 /* Sources */,
 				C34071882A5B5177001FAD58 /* Frameworks */,
 				C34071892A5B5177001FAD58 /* Resources */,
-				C3A9FBE12A5BAB2C0059DCEC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -864,7 +843,6 @@
 			files = (
 				C34071E52A5B5349001FAD58 /* r_sky.c in Sources */,
 				C34071A22A5B5349001FAD58 /* icon.c in Sources */,
-				C3A9FBDC2A5BA68A0059DCEC /* i_sdlsound.c in Sources */,
 				C34071B02A5B5349001FAD58 /* d_main.c in Sources */,
 				C34071AD2A5B5349001FAD58 /* w_file_stdc.c in Sources */,
 				C34071F02A5B5349001FAD58 /* wi_stuff.c in Sources */,
@@ -915,7 +893,6 @@
 				C34071A62A5B5349001FAD58 /* r_bsp.c in Sources */,
 				C34071EA2A5B5349001FAD58 /* statdump.c in Sources */,
 				C34071DA2A5B5349001FAD58 /* sounds.c in Sources */,
-				C38BFFBE2A5BB628005A5D83 /* i_sdlmusic.c in Sources */,
 				C34071C92A5B5349001FAD58 /* i_endoom.c in Sources */,
 				C34071B62A5B5349001FAD58 /* r_draw.c in Sources */,
 				C34071F42A5B5358001FAD58 /* doomgeneric_objc_interop.m in Sources */,
@@ -1096,7 +1073,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1133,7 +1109,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
