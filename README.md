@@ -1,12 +1,13 @@
 ## What is this?
 
-The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomgeneric) and port it over to Apple devices.
+The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomgeneric) and port it over to Apple devices. This was mostly a weekend hack and may not progress any further.
 
 ### TODO:
+- Add controls
 - Watch sound? 
--- Add SDL frameworks (see macOS target)
--- Add compiler flag: `-DFEATURE_SOUND`
--- Add i_sdlsound and i_sdlmusic to Watch target
+  - Add SDL frameworks (see macOS target)
+  - Add compiler flag: `-DFEATURE_SOUND`
+  - Add i_sdlsound and i_sdlmusic to Watch target
 - Use bundled asset WAD on macOS
 
 
