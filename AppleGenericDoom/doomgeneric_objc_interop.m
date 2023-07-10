@@ -7,11 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
-//#ifdef TARGET_OS_WATCH
-//#import <AppleGenericDoomWatch_Watch_App-Swift.h>
-//#else
+#if TARGET_OS_WATCH
+#import <AppleGenericDoomWatch_Watch_App-Swift.h>
+#endif
+
+#if TARGET_OS_OSX
 #import <AppleGenericDoom-Swift.h>
-//#endif
+#endif
 
 #include "doomkeys.h"
 //#include "m_argv.h"
