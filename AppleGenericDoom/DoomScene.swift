@@ -12,8 +12,15 @@ class DoomScene: SKScene {
 
     override init(size: CGSize) {
         super.init(size: size)
-        doomgeneric_Create(0, nil)
-        listdir()
+
+        let iwadLocation = getiWadLocation()
+        let args = ["foo", "-iwad", iwadLocation]
+
+        // h/t https://stackoverflow.com/a/29469618
+        var cargs = args.map { strdup($0) }
+        doomgeneric_Create(Int32(args.count), &cargs)
+        // free the duplicated strings
+        for ptr in cargs { free(ptr) }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,20 +32,7 @@ class DoomScene: SKScene {
         doomgeneric_Tick()
     }
 
-    func listdir() {
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-
-        do {
-            let items = try fm.contentsOfDirectory(atPath: path)
-            print(path)
-            print(fm.currentDirectoryPath)
-
-            for item in items {
-                print("Found \(item)")
-            }
-        } catch {
-            // failed to read directory – bad permissions, perhaps?
-        }
+    func getiWadLocation() -> String {
+        return Bundle.main.resourcePath!.appending("/doom1.wad")
     }
 }
