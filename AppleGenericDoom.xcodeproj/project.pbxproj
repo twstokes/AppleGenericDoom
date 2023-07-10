@@ -189,6 +189,18 @@
 		C34940FC2A5A555400E5855C /* mus2mid.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A42A5A555200E5855C /* mus2mid.c */; };
 		C34940FD2A5A555400E5855C /* f_wipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A52A5A555200E5855C /* f_wipe.c */; };
 		C34940FE2A5A555400E5855C /* p_floor.c in Sources */ = {isa = PBXBuildFile; fileRef = C34940A72A5A555300E5855C /* p_floor.c */; };
+		C38BFFB42A5BB42F005A5D83 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C38BFFB52A5BB453005A5D83 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; };
+		C38BFFB62A5BB453005A5D83 /* SDL2_mixer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C38BFFB72A5BB52B005A5D83 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; };
+		C38BFFB82A5BB52B005A5D83 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C38BFFBA2A5BB535005A5D83 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; };
+		C38BFFBB2A5BB535005A5D83 /* SDL2_mixer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C38BFFBD2A5BB628005A5D83 /* i_sdlmusic.c in Sources */ = {isa = PBXBuildFile; fileRef = C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */; };
+		C38BFFBE2A5BB628005A5D83 /* i_sdlmusic.c in Sources */ = {isa = PBXBuildFile; fileRef = C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */; };
+		C3A9FBDB2A5BA68A0059DCEC /* i_sdlsound.c in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */; };
+		C3A9FBDC2A5BA68A0059DCEC /* i_sdlsound.c in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */; };
+		C3A9FBDF2A5BAB2C0059DCEC /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +223,30 @@
 				C340718C2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38BFFB92A5BB52B005A5D83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C38BFFB82A5BB52B005A5D83 /* SDL2.framework in Embed Frameworks */,
+				C38BFFBB2A5BB535005A5D83 /* SDL2_mixer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3A9FBE12A5BAB2C0059DCEC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C38BFFB42A5BB42F005A5D83 /* SDL2.framework in Embed Frameworks */,
+				C38BFFB62A5BB453005A5D83 /* SDL2_mixer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -412,6 +448,10 @@
 		C34940A72A5A555300E5855C /* p_floor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p_floor.c; sourceTree = "<group>"; };
 		C34940A82A5A555300E5855C /* r_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = r_data.h; sourceTree = "<group>"; };
 		C34940A92A5A555300E5855C /* w_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = w_main.h; sourceTree = "<group>"; };
+		C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = AppleGenericDoom/SDL2_mixer.framework; sourceTree = "<group>"; };
+		C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = i_sdlmusic.c; sourceTree = "<group>"; };
+		C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = i_sdlsound.c; sourceTree = "<group>"; };
+		C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = AppleGenericDoom/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +459,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A9FBDF2A5BAB2C0059DCEC /* SDL2.framework in Frameworks */,
+				C38BFFB52A5BB453005A5D83 /* SDL2_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +468,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38BFFB72A5BB52B005A5D83 /* SDL2.framework in Frameworks */,
+				C38BFFBA2A5BB535005A5D83 /* SDL2_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +502,7 @@
 				C3493FE22A5A547300E5855C /* AppleGenericDoom */,
 				C340718F2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */,
 				C3493FE12A5A547300E5855C /* Products */,
+				C3A9FBDD2A5BAB2B0059DCEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -492,6 +537,8 @@
 			isa = PBXGroup;
 			children = (
 				C34940612A5A554200E5855C /* am_map.c */,
+				C3A9FBDA2A5BA68A0059DCEC /* i_sdlsound.c */,
+				C38BFFBC2A5BB628005A5D83 /* i_sdlmusic.c */,
 				C34940862A5A554A00E5855C /* am_map.h */,
 				C349406C2A5A554400E5855C /* config.h */,
 				C34940062A5A552E00E5855C /* d_englsh.h */,
@@ -674,6 +721,15 @@
 			path = doomgeneric;
 			sourceTree = "<group>";
 		};
+		C3A9FBDD2A5BAB2B0059DCEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C38BFFB12A5BB03D005A5D83 /* SDL2_mixer.framework */,
+				C3A9FBDE2A5BAB2C0059DCEC /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -701,6 +757,7 @@
 				C34071872A5B5177001FAD58 /* Sources */,
 				C34071882A5B5177001FAD58 /* Frameworks */,
 				C34071892A5B5177001FAD58 /* Resources */,
+				C3A9FBE12A5BAB2C0059DCEC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -718,6 +775,7 @@
 				C3493FDC2A5A547300E5855C /* Sources */,
 				C3493FDD2A5A547300E5855C /* Frameworks */,
 				C3493FDE2A5A547300E5855C /* Resources */,
+				C38BFFB92A5BB52B005A5D83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -806,6 +864,7 @@
 			files = (
 				C34071E52A5B5349001FAD58 /* r_sky.c in Sources */,
 				C34071A22A5B5349001FAD58 /* icon.c in Sources */,
+				C3A9FBDC2A5BA68A0059DCEC /* i_sdlsound.c in Sources */,
 				C34071B02A5B5349001FAD58 /* d_main.c in Sources */,
 				C34071AD2A5B5349001FAD58 /* w_file_stdc.c in Sources */,
 				C34071F02A5B5349001FAD58 /* wi_stuff.c in Sources */,
@@ -856,6 +915,7 @@
 				C34071A62A5B5349001FAD58 /* r_bsp.c in Sources */,
 				C34071EA2A5B5349001FAD58 /* statdump.c in Sources */,
 				C34071DA2A5B5349001FAD58 /* sounds.c in Sources */,
+				C38BFFBE2A5BB628005A5D83 /* i_sdlmusic.c in Sources */,
 				C34071C92A5B5349001FAD58 /* i_endoom.c in Sources */,
 				C34071B62A5B5349001FAD58 /* r_draw.c in Sources */,
 				C34071F42A5B5358001FAD58 /* doomgeneric_objc_interop.m in Sources */,
@@ -901,6 +961,7 @@
 			files = (
 				C34940E82A5A555400E5855C /* info.c in Sources */,
 				C34940D32A5A555400E5855C /* i_system.c in Sources */,
+				C3A9FBDB2A5BA68A0059DCEC /* i_sdlsound.c in Sources */,
 				C34940FA2A5A555400E5855C /* w_file_stdc.c in Sources */,
 				C34940BC2A5A555400E5855C /* w_wad.c in Sources */,
 				C34940B82A5A555400E5855C /* doomdef.c in Sources */,
@@ -951,6 +1012,7 @@
 				C3493FE42A5A547300E5855C /* AppDelegate.swift in Sources */,
 				C34940E12A5A555400E5855C /* d_loop.c in Sources */,
 				C34940DD2A5A555400E5855C /* r_main.c in Sources */,
+				C38BFFBD2A5BB628005A5D83 /* i_sdlmusic.c in Sources */,
 				C34940B12A5A555400E5855C /* p_tick.c in Sources */,
 				C34940B32A5A555400E5855C /* m_fixed.c in Sources */,
 				C34940F72A5A555400E5855C /* i_timer.c in Sources */,
@@ -1024,6 +1086,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = AE76EV48ND;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1033,6 +1096,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1059,6 +1123,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = AE76EV48ND;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1068,6 +1133,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoomWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1241,6 +1307,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AE76EV48ND;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppleGenericDoom",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1250,6 +1320,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1272,6 +1343,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AE76EV48ND;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppleGenericDoom",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1281,6 +1356,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-DFEATURE_SOUND";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tannr.AppleGenericDoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

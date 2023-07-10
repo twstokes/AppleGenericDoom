@@ -13,14 +13,15 @@ class DoomScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
 
-        let iwadLocation = getiWadLocation()
-        let args = ["foo", "-iwad", iwadLocation]
-
-        // h/t https://stackoverflow.com/a/29469618
-        var cargs = args.map { strdup($0) }
-        doomgeneric_Create(Int32(args.count), &cargs)
-        // free the duplicated strings
-        for ptr in cargs { free(ptr) }
+//        let iwadLocation = getiWadLocation()
+//        let args = ["foo", "-iwad", iwadLocation]
+//
+//        // h/t https://stackoverflow.com/a/29469618
+//        var cargs = args.map { strdup($0) }
+//        doomgeneric_Create(Int32(args.count), &cargs)
+//        // free the duplicated strings
+//        for ptr in cargs { free(ptr) }
+        doomgeneric_Create(0, nil)
     }
 
     required init?(coder aDecoder: NSCoder) {

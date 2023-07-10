@@ -19,7 +19,7 @@
 #include <stdlib.h>
 
 #ifdef FEATURE_SOUND
-#include <SDL_mixer.h>
+#include <SDL2_mixer/SDL_mixer.h>
 #endif
 
 #include "config.h"
