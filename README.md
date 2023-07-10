@@ -22,4 +22,4 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 
 ### Loading WAD files
 
-Until this has been figured out, drop a WAD file in ~/Library/Containers/com.tannr.AppleGenericDoom/Data and it'll automatically be detected (e.g. doom1.wad) on macOS. On WatchOS it will look for the bundled asset.
+Until this has been figured out, drop a WAD file in ~/Library/Containers/com.tannr.AppleGenericDoom/Data and it'll automatically be detected (e.g. doom1.wad) on macOS. On watchOS it will look for the bundled asset.
