@@ -20,6 +20,7 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
   - Add i_sdlsound and i_sdlmusic to Watch target
 - Use bundled asset WAD on macOS
 - Get MIDIs going
+- Move to SDL2 precompiled frameworks?
 
 
 
