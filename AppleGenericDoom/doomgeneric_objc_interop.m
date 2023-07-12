@@ -21,8 +21,8 @@
 
 #include <stdbool.h>
 
-static DoomGenericSwift *dgs;
-static CFAbsoluteTime timeInSeconds = 0;
+DoomGenericSwift *dgs;
+CFAbsoluteTime timeInSeconds;
 
 void DG_Init()
 {
