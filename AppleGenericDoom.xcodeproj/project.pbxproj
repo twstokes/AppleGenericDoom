@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C31D8E5E2A5B0C3B0062F401 /* doomgeneric_objc_interop.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */; };
 		C31D8E602A5B0DB30062F401 /* DoomGenericSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */; };
+		C333C1122A5F12AD00A780DE /* WADs in Resources */ = {isa = PBXBuildFile; fileRef = C333C1112A5F12AD00A780DE /* WADs */; };
+		C333C1132A5F13E300A780DE /* WADs in Resources */ = {isa = PBXBuildFile; fileRef = C333C1112A5F12AD00A780DE /* WADs */; };
 		C34071832A5B4039001FAD58 /* DoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071822A5B4039001FAD58 /* DoomScene.swift */; };
 		C340718C2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C34071912A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34071902A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift */; };
@@ -101,7 +103,6 @@
 		C34071F32A5B5349001FAD58 /* p_inter.c in Sources */ = {isa = PBXBuildFile; fileRef = C3493FF52A5A552B00E5855C /* p_inter.c */; };
 		C34071F42A5B5358001FAD58 /* doomgeneric_objc_interop.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */; };
 		C34071F52A5B5567001FAD58 /* DoomGenericSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */; };
-		C34071F72A5B57DF001FAD58 /* doom1.wad in Resources */ = {isa = PBXBuildFile; fileRef = C34071F62A5B57DF001FAD58 /* doom1.wad */; };
 		C3493FE42A5A547300E5855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE32A5A547300E5855C /* AppDelegate.swift */; };
 		C3493FE62A5A547300E5855C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3493FE52A5A547300E5855C /* ViewController.swift */; };
 		C3493FE82A5A547400E5855C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3493FE72A5A547400E5855C /* Assets.xcassets */; };
@@ -236,6 +237,7 @@
 /* Begin PBXFileReference section */
 		C31D8E5D2A5B0C3B0062F401 /* doomgeneric_objc_interop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doomgeneric_objc_interop.m; sourceTree = "<group>"; };
 		C31D8E5F2A5B0DB30062F401 /* DoomGenericSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoomGenericSwift.swift; sourceTree = "<group>"; };
+		C333C1112A5F12AD00A780DE /* WADs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WADs; path = AppleGenericDoom/WADs; sourceTree = "<group>"; };
 		C34071822A5B4039001FAD58 /* DoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoomScene.swift; sourceTree = "<group>"; };
 		C34071862A5B5177001FAD58 /* AppleGenericDoomWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleGenericDoomWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C340718B2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleGenericDoomWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +245,6 @@
 		C34071922A5B5177001FAD58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C34071942A5B5178001FAD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C34071972A5B5178001FAD58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C34071F62A5B57DF001FAD58 /* doom1.wad */ = {isa = PBXFileReference; lastKnownFileType = file; path = doom1.wad; sourceTree = "<group>"; };
 		C3493FE02A5A547300E5855C /* AppleGenericDoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleGenericDoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3493FE32A5A547300E5855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3493FE52A5A547300E5855C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -461,7 +462,6 @@
 			children = (
 				C34071902A5B5177001FAD58 /* AppleGenericDoomWatchApp.swift */,
 				C34071922A5B5177001FAD58 /* ContentView.swift */,
-				C34071F62A5B57DF001FAD58 /* doom1.wad */,
 				C34071942A5B5178001FAD58 /* Assets.xcassets */,
 				C34071962A5B5178001FAD58 /* Preview Content */,
 			);
@@ -480,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				C3493FE22A5A547300E5855C /* AppleGenericDoom */,
+				C333C1112A5F12AD00A780DE /* WADs */,
 				C340718F2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */,
 				C3493FE12A5A547300E5855C /* Products */,
 				C3A9FBDD2A5BAB2B0059DCEC /* Frameworks */,
@@ -819,8 +820,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C333C1122A5F12AD00A780DE /* WADs in Resources */,
 				C34071982A5B5178001FAD58 /* Preview Assets.xcassets in Resources */,
-				C34071F72A5B57DF001FAD58 /* doom1.wad in Resources */,
 				C34071952A5B5178001FAD58 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,6 +832,7 @@
 			files = (
 				C3493FE82A5A547400E5855C /* Assets.xcassets in Resources */,
 				C3493FEB2A5A547400E5855C /* Main.storyboard in Resources */,
+				C333C1132A5F13E300A780DE /* WADs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

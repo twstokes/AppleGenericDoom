@@ -13,20 +13,18 @@ class DoomScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
 
-        #if os(macOS)
-        doomgeneric_Create(0, nil)
-        #endif
+        guard let wadPath = getFirstWadLocation() else {
+            print("Failed to find a WAD file!")
+            return
+        }
 
-        #if os(watchOS)
-        let iwadLocation = getiWadLocation()
-        let args = ["foo", "-iwad", iwadLocation]
+        let args = ["foo", "-iwad", wadPath]
 
         // h/t https://stackoverflow.com/a/29469618
         var cargs = args.map { strdup($0) }
         doomgeneric_Create(Int32(args.count), &cargs)
         // free the duplicated strings
         for ptr in cargs { free(ptr) }
-        #endif
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +36,19 @@ class DoomScene: SKScene {
         doomgeneric_Tick()
     }
 
-    func getiWadLocation() -> String {
-        return Bundle.main.resourcePath!.appending("/doom1.wad")
+    // returns the full path of the first file found in the bundled WADs directory
+    func getFirstWadLocation() -> String? {
+        guard let resourcePath = Bundle.main.resourcePath else {
+            return nil
+        }
+
+        let fileManager = FileManager.default
+        let wadsPath = resourcePath.appending("/WADs")
+
+        guard let firstFileName = try? fileManager.contentsOfDirectory(atPath: wadsPath).first else {
+            return nil
+        }
+
+        return wadsPath.appending("/" + firstFileName)
     }
 }
