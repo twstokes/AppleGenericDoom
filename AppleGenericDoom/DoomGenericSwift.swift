@@ -14,11 +14,6 @@ import Foundation
 
     var frameDrawCallback: ((Data) -> Void)?
 
-    override init() {
-        super.init()
-        print("Swift DG_Init called")
-    }
-
     @objc func DG_DrawFrame() {
         let data = Data(bytes: DG_ScreenBuffer, count: Int(DOOMGENERIC_RESX) * Int(DOOMGENERIC_RESY) * 4)
         frameDrawCallback?(data)
