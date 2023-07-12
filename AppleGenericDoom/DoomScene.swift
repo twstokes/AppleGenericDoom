@@ -10,11 +10,11 @@ import SpriteKit
 
 class DoomScene: SKScene {
 
-    override init(size: CGSize) {
+    init(size: CGSize, wadPath: String? = DoomGenericSwift.getFirstWadLocation()) {
         super.init(size: size)
 
-        guard let wadPath = getFirstWadLocation() else {
-            print("Failed to find a WAD file!")
+        guard let wadPath else {
+            print("No WAD path provided!")
             return
         }
 
@@ -34,21 +34,5 @@ class DoomScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         doomgeneric_Tick()
-    }
-
-    // returns the full path of the first file found in the bundled WADs directory
-    func getFirstWadLocation() -> String? {
-        guard let resourcePath = Bundle.main.resourcePath else {
-            return nil
-        }
-
-        let fileManager = FileManager.default
-        let wadsPath = resourcePath.appending("/WADs")
-
-        guard let firstFileName = try? fileManager.contentsOfDirectory(atPath: wadsPath).first else {
-            return nil
-        }
-
-        return wadsPath.appending("/" + firstFileName)
     }
 }

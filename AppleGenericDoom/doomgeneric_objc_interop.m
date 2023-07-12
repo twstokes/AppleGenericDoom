@@ -13,14 +13,6 @@
 #import <AppleGenericDoom-Swift.h>
 #endif
 
-#include "doomkeys.h"
-#include "doomgeneric.h"
-
-#include <stdio.h>
-#include <unistd.h>
-
-#include <stdbool.h>
-
 DoomGenericSwift *dgs;
 CFAbsoluteTime timeInSeconds;
 

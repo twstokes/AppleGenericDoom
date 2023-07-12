@@ -20,7 +20,7 @@ class ViewController: NSViewController {
         scene = DoomScene(size: view.bounds.size)
         scene.scaleMode = .resizeFill
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        skview.preferredFramesPerSecond = 30
+        // skview.preferredFramesPerSecond = 30
 
         skview.presentScene(scene)
         startDoom()

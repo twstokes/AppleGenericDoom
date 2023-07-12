@@ -31,13 +31,10 @@ struct ContentView: View {
             }
         }
 
-
         return scene
     }
 
     var body: some View {
-        let size = WKInterfaceDevice.current().screenBounds.size
-
         SpriteView(scene: doomScene)
             .ignoresSafeArea()
     }

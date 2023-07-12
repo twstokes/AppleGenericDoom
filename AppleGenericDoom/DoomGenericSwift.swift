@@ -23,4 +23,20 @@ import Foundation
     @objc class func shared() -> DoomGenericSwift {
         return sharedDoomGenericSwift
     }
+
+    // returns the full path of the first file found in the bundled WADs directory
+    static func getFirstWadLocation() -> String? {
+        guard let resourcePath = Bundle.main.resourcePath else {
+            return nil
+        }
+
+        let fileManager = FileManager.default
+        let wadsPath = resourcePath.appending("/WADs")
+
+        guard let firstFileName = try? fileManager.contentsOfDirectory(atPath: wadsPath).first else {
+            return nil
+        }
+
+        return wadsPath.appending("/" + firstFileName)
+    }
 }
