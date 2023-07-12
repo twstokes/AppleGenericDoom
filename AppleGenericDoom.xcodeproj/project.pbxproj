@@ -1083,6 +1083,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AppleGenericDoom/AppleGenericDoom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
+				WARNING_CFLAGS = "-Wno-strict-prototypes";
 				WATCHOS_DEPLOYMENT_TARGET = 9.4;
 			};
 			name = Debug;
@@ -1120,6 +1121,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wno-strict-prototypes";
 				WATCHOS_DEPLOYMENT_TARGET = 9.4;
 			};
 			name = Release;
