@@ -14,14 +14,12 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 
 ### TODO:
 - Add controls
-- Watch sound? 
+- Watch sound? - Probably not going to happen via SDL due to missing support from frameworks like [Audio Toolbox](https://developer.apple.com/documentation/audiotoolbox/)
   - Add SDL frameworks (see macOS target)
   - Add compiler flag: `-DFEATURE_SOUND`
   - Add i_sdlsound and i_sdlmusic to Watch target
 - Use bundled asset WAD on macOS
 - Get MIDIs going
-- Move to SDL2 precompiled frameworks?
-
 
 
 ### Loading WAD files
