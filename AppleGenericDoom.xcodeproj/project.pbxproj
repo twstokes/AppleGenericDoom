@@ -480,8 +480,9 @@
 			isa = PBXGroup;
 			children = (
 				C3493FE22A5A547300E5855C /* AppleGenericDoom */,
-				C333C1112A5F12AD00A780DE /* WADs */,
 				C340718F2A5B5177001FAD58 /* AppleGenericDoomWatch Watch App */,
+				C34F27B12A6053ED008DC128 /* libs */,
+				C333C1112A5F12AD00A780DE /* WADs */,
 				C3493FE12A5A547300E5855C /* Products */,
 				C3A9FBDD2A5BAB2B0059DCEC /* Frameworks */,
 			);
@@ -500,7 +501,6 @@
 		C3493FE22A5A547300E5855C /* AppleGenericDoom */ = {
 			isa = PBXGroup;
 			children = (
-				C3493FF22A5A54BB00E5855C /* doomgeneric */,
 				C3493FE32A5A547300E5855C /* AppDelegate.swift */,
 				C3493FE52A5A547300E5855C /* ViewController.swift */,
 				C34071822A5B4039001FAD58 /* DoomScene.swift */,
@@ -700,6 +700,14 @@
 				C34940892A5A554B00E5855C /* z_zone.h */,
 			);
 			path = doomgeneric;
+			sourceTree = "<group>";
+		};
+		C34F27B12A6053ED008DC128 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				C3493FF22A5A54BB00E5855C /* doomgeneric */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 		C3A9FBDD2A5BAB2B0059DCEC /* Frameworks */ = {
@@ -1065,7 +1073,6 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = AE76EV48ND;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1102,7 +1109,6 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = AE76EV48ND;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AppleGenericDoomWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1286,10 +1292,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AE76EV48ND;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/AppleGenericDoom",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1322,10 +1325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AE76EV48ND;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/AppleGenericDoom",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/AppleGenericDoom";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
