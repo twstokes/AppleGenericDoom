@@ -12,23 +12,10 @@ struct ContentView: View {
     var doomScene: DoomScene {
         let size = WKInterfaceDevice.current().screenBounds.size
         let scene = DoomScene(size: size)
-        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 
         DoomGenericSwift.shared().frameDrawCallback = { data in
             let newTexture = SKTexture(data: data, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY)), flipped: true)
-
-            let primaryNode = scene.children.first as? SKSpriteNode
-
-            if let primaryNode {
-                primaryNode.texture = newTexture
-            } else {
-                let node = SKSpriteNode(texture: newTexture)
-                node.texture = newTexture
-                let ratio = Int(DOOMGENERIC_RESX) / Int(DOOMGENERIC_RESY)
-                let width = size.width
-                node.size = .init(width: width, height: width * CGFloat(ratio))
-                scene.addChild(node)
-            }
+            scene.doomNode.texture = newTexture
         }
 
         return scene
@@ -36,7 +23,6 @@ struct ContentView: View {
 
     var body: some View {
         SpriteView(scene: doomScene)
-            .ignoresSafeArea()
     }
 }
 

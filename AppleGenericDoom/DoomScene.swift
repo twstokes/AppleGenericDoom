@@ -9,9 +9,14 @@ import Foundation
 import SpriteKit
 
 class DoomScene: SKScene {
+    private(set) var doomNode = SKSpriteNode()
 
     init(size: CGSize, wadPath: String? = DoomGenericSwift.getFirstWadLocation()) {
         super.init(size: size)
+
+        scaleMode = .resizeFill
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        addChild(doomNode)
 
         guard let wadPath else {
             print("No WAD path provided!")
@@ -25,6 +30,11 @@ class DoomScene: SKScene {
         doomgeneric_Create(Int32(args.count), &cargs)
         // free the duplicated strings
         for ptr in cargs { free(ptr) }
+    }
+
+    override func didChangeSize(_ oldSize: CGSize) {
+        super.didChangeSize(oldSize)
+        doomNode.size = size
     }
 
     required init?(coder aDecoder: NSCoder) {
