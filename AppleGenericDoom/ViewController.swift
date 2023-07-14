@@ -9,12 +9,17 @@ import Cocoa
 import SpriteKit
 
 class ViewController: NSViewController {
+    private let viewSize = NSSize(
+        width: Int(DOOMGENERIC_RESX),
+        height: Int(DOOMGENERIC_RESY)
+    )
+
     private var scene: DoomScene!
     private var node: SKSpriteNode?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let skview = SKView(frame: .init(origin: .zero, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY))))
+        let skview = SKView(frame: .init(origin: .zero, size: viewSize))
         view.addSubview(skview)
 
         scene = DoomScene(size: view.bounds.size)
@@ -28,13 +33,15 @@ class ViewController: NSViewController {
 
     override func viewWillAppear() {
         super.viewWillAppear()
-        preferredContentSize = NSSize(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY))
+        preferredContentSize = viewSize
     }
 
 
     private func startDoom() {
-        DoomGenericSwift.shared().frameDrawCallback = { data in
-            let newTexture = SKTexture(data: data, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY)), flipped: true)
+        DoomGenericSwift.shared().frameDrawCallback = { [weak self] data in
+            guard let self else { return }
+
+            let newTexture = SKTexture(data: data, size: self.viewSize, flipped: true)
 
             if let node = self.node {
                 node.texture = newTexture
