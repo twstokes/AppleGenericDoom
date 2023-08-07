@@ -45,28 +45,6 @@ char *doom2_endmsg[] =
   "you're lucky i don't smack\nyou for thinking about leaving.",
 };
 
-#if 0
-
-// UNUSED messages included in the source release
-
-char* endmsg[] =
-{
-  // DOOM1
-  QUITMSG,
-  // FinalDOOM?
-  "fuck you, pussy!\nget the fuck out!",
-  "you quit and i'll jizz\nin your cystholes!",
-  "if you leave, i'll make\nthe lord drink my jizz.",
-  "hey, ron! can we say\n'fuck' in the game?",
-  "i'd leave: this is just\nmore monsters and levels.\nwhat a load.",
-  "suck it down, asshole!\nyou're a fucking wimp!",
-  "don't quit now! we're \nstill spending your money!",
-
-  // Internal debug. Different style, too.
-  "THIS IS NO MESSAGE!\nPage intentionally left blank."
-};
-
-#endif
 
   
 
