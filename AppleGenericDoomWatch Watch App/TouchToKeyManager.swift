@@ -1,3 +1,10 @@
+//
+//  TouchToKeyManager.swift
+//  AppleGenericDoomWatch Watch App
+//
+//  Created by Daniel Colman on 9/26/24.
+//
+
 import Foundation
 
 /// A specific region of the screen.
