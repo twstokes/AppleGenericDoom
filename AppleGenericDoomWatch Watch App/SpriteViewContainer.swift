@@ -5,8 +5,8 @@
 //  Created by Daniel Colman on 9/26/24.
 //
 
-import SwiftUI
 import SpriteKit
+import SwiftUI
 
 // A container to hold the SpriteView and prevent re-rendering
 struct SpriteViewContainer: View {
