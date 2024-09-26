@@ -12,8 +12,26 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 - macOS has sound via SDL2
 - watchOS currently does not have sound
 
+## Controls
+The watch app has touch controls.
+
+The full screen is divided into a 3x3 grid:
+
+left  |  up  |  right 
+----------------------
+left  |  up  |  right
+----------------------
+action | down | fire
+----------------------
+
+**Action** changes based on game state: ENTER (Menu) or USE (In-Game)
+
+**Fire** also changes based on game state: ESCAPE (Menu) or FIRE (In-Game)
+
+Controls can be adjusted in `TouchToKeyManager.swift`. 
+
 ### TODO:
-- Add controls
+- Add macOS controls
 - Watch sound? - Probably not going to happen via SDL due to missing support from frameworks like [Audio Toolbox](https://developer.apple.com/documentation/audiotoolbox/)
   - Add SDL frameworks (see macOS target)
   - Add compiler flag: `-DFEATURE_SOUND`

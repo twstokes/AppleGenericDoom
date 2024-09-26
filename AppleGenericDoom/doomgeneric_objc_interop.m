@@ -39,6 +39,19 @@ uint32_t DG_GetTicksMs()
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
 {
+    #if TARGET_OS_WATCH
+    if ([TouchToKeyManager getCurrentReadIndex] == [TouchToKeyManager getCurrentWriteIndex]) {
+        return 0;
+    } else {
+        int key = [TouchToKeyManager getNextKey];
+
+        *pressed = key >> 8;
+        *doomKey = key & 0xFF;
+
+        return 1;
+    }
+    #endif
+
     return 0;
 }
 

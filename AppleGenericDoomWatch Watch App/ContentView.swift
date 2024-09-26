@@ -6,24 +6,43 @@
 //
 
 import SwiftUI
-import SpriteKit
 
 struct ContentView: View {
-    var doomScene: DoomScene {
-        let size = WKInterfaceDevice.current().screenBounds.size
-        let scene = DoomScene(size: size)
-
-        DoomGenericSwift.shared().frameDrawCallback = { data in
-            let newTexture = SKTexture(data: data, size: .init(width: Int(DOOMGENERIC_RESX), height: Int(DOOMGENERIC_RESY)), flipped: true)
-            scene.doomNode.texture = newTexture
-        }
-
-        return scene
-    }
+    @State private var currentGridRegion: ScreenRegion = .up
 
     var body: some View {
-        SpriteView(scene: doomScene)
-    }
+            GeometryReader { geometry in
+                ZStack {
+                    // Display the SpriteKit scene, without re-rendering
+                    SpriteViewContainer()
+
+                    // Gesture handling
+                    Color.clear
+                        .contentShape(Rectangle()) // Ensure the entire area can detect taps
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { value in
+                                    let location = value.location
+                                    let screenWidth = geometry.size.width
+                                    let screenHeight = geometry.size.height
+                                    let region = TouchToKeyManager.determineGridRegion(for: location,
+                                                                                        screenWidth: screenWidth,
+                                                                                    screenHeight: screenHeight)
+
+                                    if currentGridRegion != region {
+                                        TouchToKeyManager.addTouchUpToKeyQueue(currentGridRegion)
+                                    }
+                                    currentGridRegion = region
+                                    TouchToKeyManager.addTouchDownToKeyQueue(region)
+                                }
+                                .onEnded { value in
+                                    TouchToKeyManager.addTouchUpToKeyQueue(currentGridRegion)
+                                }
+                        )
+                        .ignoresSafeArea()
+                }
+            }
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
