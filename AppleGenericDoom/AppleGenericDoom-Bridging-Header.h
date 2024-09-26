@@ -3,3 +3,5 @@
 //
 
 #import "doomgeneric.h"
+#import "doomkeys.h"
+#import "doomstat.h"
