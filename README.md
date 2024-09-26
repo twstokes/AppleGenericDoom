@@ -13,7 +13,7 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 - watchOS currently does not have sound
 
 ## Controls
-The watch app has touch controls as follows: 
+The watch app has touch controls.
 
 The full screen is divided into a 3x3 grid:
 
