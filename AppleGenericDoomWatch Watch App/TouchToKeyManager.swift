@@ -1,14 +1,18 @@
 import Foundation
 
-/// A specific region fo the screen.
+/// A specific region of the screen.
 ///
-/// Screen is divided into 3x3 grid:
+/// The screen is divided into a 3x3 grid:
+///
 ///  left  |  up  | right
 /// ----------------------
 ///  left  |  up  | right
 /// ----------------------
 /// action | down | fire
+/// ----------------------
 ///
+/// **Action** changes based on game state: ENTER (Menu) or USE (In-Game)
+/// **Fire** also changes based on game state: ESCAPE (Menu) or FIRE (In-Game)
 @objc enum ScreenRegion: Int {
     case left
     case right
