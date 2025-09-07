@@ -30,12 +30,24 @@ static const int AVF_NUM_CHANNELS = 16;
 @property(nonatomic,strong) NSArray<AVAudioPlayerNode*> *players;
 @property(nonatomic,strong) NSMutableArray<NSNumber*> *channelActive; // BOOLs
 @property(nonatomic,strong) dispatch_queue_t queue;
+@property(nonatomic,strong) NSMutableArray *cache; // of DGSFXEntry*
+@property(nonatomic,assign) NSUInteger cacheBytes;
+@property(nonatomic,strong) NSMutableArray *channelEntry; // per-channel DGSFXEntry or NSNull
 @end
 
 @implementation DGAudio
 @end
 
 static DGAudio *g_audio = nil;
+
+@interface DGSFXEntry : NSObject
+@property(nonatomic, assign) sfxinfo_t *sfx;
+@property(nonatomic, strong) AVAudioPCMBuffer *buffer;
+@property(nonatomic, assign) NSUInteger sizeBytes;
+@property(nonatomic, assign) int useCount;
+@end
+
+@implementation DGSFXEntry @end
 
 static void GetSfxLumpName_AVF(sfxinfo_t *sfx, char *buf, size_t buf_len)
 {
@@ -80,14 +92,18 @@ static boolean I_AVF_InitSound(boolean _use_sfx_prefix)
         // Create players
         NSMutableArray *players = [NSMutableArray arrayWithCapacity:AVF_NUM_CHANNELS];
         g_audio.channelActive = [NSMutableArray arrayWithCapacity:AVF_NUM_CHANNELS];
+        g_audio.channelEntry = [NSMutableArray arrayWithCapacity:AVF_NUM_CHANNELS];
         for (int i = 0; i < AVF_NUM_CHANNELS; i++) {
             AVAudioPlayerNode *node = [AVAudioPlayerNode new];
             [g_audio.engine attachNode:node];
             [g_audio.engine connect:node to:g_audio.engine.mainMixerNode format:g_audio.dstFormat];
             [players addObject:node];
             [g_audio.channelActive addObject:@(NO)];
+            [g_audio.channelEntry addObject:[NSNull null]];
         }
         g_audio.players = players;
+        g_audio.cache = [NSMutableArray array];
+        g_audio.cacheBytes = 0;
 
         // Start engine
         if (![g_audio.engine isRunning]) {
@@ -148,74 +164,120 @@ static int I_AVF_StartSound(sfxinfo_t *sfxinfo, int channel, int vol, int sep)
     if (!avf_initialized) { return -1; }
     if (channel < 0 || channel >= AVF_NUM_CHANNELS) { return -1; }
 
-    // Lookup lump
-    int lumpnum = sfxinfo->lumpnum;
-    if (lumpnum <= 0) {
-        lumpnum = I_AVF_GetSfxLumpNum(sfxinfo);
-        if (lumpnum <= 0) { return -1; }
-        sfxinfo->lumpnum = lumpnum;
-    }
-
-    byte *data = (byte *)W_CacheLumpNum(lumpnum, PU_STATIC);
-    unsigned int lumplen = W_LumpLength(lumpnum);
-    if (lumplen < 8 || data[0] != 0x03 || data[1] != 0x00) {
-        W_ReleaseLumpNum(lumpnum);
-        return -1;
-    }
-
-    int samplerate = (data[3] << 8) | data[2];
-    unsigned int length = (data[7] << 24) | (data[6] << 16) | (data[5] << 8) | data[4];
-    if (length > lumplen - 8 || length <= 48) {
-        W_ReleaseLumpNum(lumpnum);
-        return -1;
-    }
-
-    // DMX quirk: skip first 16 and last 16 bytes
-    data += 16;
-    length -= 32;
-    if (length <= 8) {
-        W_ReleaseLumpNum(lumpnum);
-        return -1;
-    }
-    const byte *src = data + 8; // skip secondary 8-byte header
-    unsigned int frames = length - 8; // 8-bit mono samples
-
-    // Build source float32 buffer
-    AVAudioFormat *srcFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:samplerate channels:1];
-    AVAudioPCMBuffer *srcBuf = [[AVAudioPCMBuffer alloc] initWithPCMFormat:srcFormat frameCapacity:frames];
-    srcBuf.frameLength = frames;
-    float *dstCh0 = srcBuf.floatChannelData[0];
-    for (unsigned int i = 0; i < frames; i++) {
-        dstCh0[i] = ((float)src[i] - 128.0f) / 128.0f;
-    }
-
-    // Convert to engine format if needed
-    AVAudioPCMBuffer *playBuf = nil;
-    if (fabs(g_audio.dstFormat.sampleRate - srcFormat.sampleRate) > 0.5
-        || g_audio.dstFormat.channelCount != srcFormat.channelCount
-        || g_audio.dstFormat.commonFormat != srcFormat.commonFormat) {
-        AVAudioConverter *conv = [[AVAudioConverter alloc] initFromFormat:srcFormat toFormat:g_audio.dstFormat];
-        AVAudioFrameCount dstCapacity = (AVAudioFrameCount)((double)frames * g_audio.dstFormat.sampleRate / srcFormat.sampleRate + 16);
-        AVAudioPCMBuffer *dstBuf = [[AVAudioPCMBuffer alloc] initWithPCMFormat:g_audio.dstFormat frameCapacity:dstCapacity];
-        __block BOOL provided = NO;
-        NSError *err = nil;
-        AVAudioConverterInputBlock inblk = ^AVAudioBuffer * _Nullable(AVAudioPacketCount inNumberOfPackets, AVAudioConverterInputStatus *outStatus) {
-            if (provided) {
-                *outStatus = AVAudioConverterInputStatus_NoDataNow;
-                return (AVAudioBuffer *)nil;
+    __block DGSFXEntry *entryToUse = nil;
+    // Check cache first
+    dispatch_sync(g_audio.queue, ^{
+        for (DGSFXEntry *e in g_audio.cache) {
+            if (e.sfx == sfxinfo) {
+                entryToUse = e;
+                // MRU: move to front
+                [g_audio.cache removeObject:e];
+                [g_audio.cache insertObject:e atIndex:0];
+                break;
             }
-            provided = YES;
-            *outStatus = AVAudioConverterInputStatus_HaveData;
-            return (AVAudioBuffer *)srcBuf;
-        };
-        [conv convertToBuffer:dstBuf error:&err withInputFromBlock:inblk];
-        if (err) {
+        }
+    });
+
+    if (!entryToUse) {
+        // Lookup lump
+        int lumpnum = sfxinfo->lumpnum;
+        if (lumpnum <= 0) {
+            lumpnum = I_AVF_GetSfxLumpNum(sfxinfo);
+            if (lumpnum <= 0) { return -1; }
+            sfxinfo->lumpnum = lumpnum;
+        }
+
+        byte *data = (byte *)W_CacheLumpNum(lumpnum, PU_STATIC);
+        unsigned int lumplen = W_LumpLength(lumpnum);
+        if (lumplen < 8 || data[0] != 0x03 || data[1] != 0x00) {
             W_ReleaseLumpNum(lumpnum);
             return -1;
         }
-        playBuf = dstBuf;
-    } else {
-        playBuf = srcBuf;
+
+        int samplerate = (data[3] << 8) | data[2];
+        unsigned int length = (data[7] << 24) | (data[6] << 16) | (data[5] << 8) | data[4];
+        if (length > lumplen - 8 || length <= 48) {
+            W_ReleaseLumpNum(lumpnum);
+            return -1;
+        }
+
+        // DMX quirk: skip first 16 and last 16 bytes
+        data += 16;
+        length -= 32;
+        if (length <= 8) {
+            W_ReleaseLumpNum(lumpnum);
+            return -1;
+        }
+        const byte *src = data + 8; // skip secondary 8-byte header
+        unsigned int frames = length - 8; // 8-bit mono samples
+
+        // Build source float32 buffer
+        AVAudioFormat *srcFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:samplerate channels:1];
+        AVAudioPCMBuffer *srcBuf = [[AVAudioPCMBuffer alloc] initWithPCMFormat:srcFormat frameCapacity:frames];
+        srcBuf.frameLength = frames;
+        float *dstCh0 = srcBuf.floatChannelData[0];
+        for (unsigned int i = 0; i < frames; i++) {
+            dstCh0[i] = ((float)src[i] - 128.0f) / 128.0f;
+        }
+
+        // Convert to engine format if needed
+        AVAudioPCMBuffer *playBuf = nil;
+        if (fabs(g_audio.dstFormat.sampleRate - srcFormat.sampleRate) > 0.5
+            || g_audio.dstFormat.channelCount != srcFormat.channelCount
+            || g_audio.dstFormat.commonFormat != srcFormat.commonFormat) {
+            AVAudioConverter *conv = [[AVAudioConverter alloc] initFromFormat:srcFormat toFormat:g_audio.dstFormat];
+            AVAudioFrameCount dstCapacity = (AVAudioFrameCount)((double)frames * g_audio.dstFormat.sampleRate / srcFormat.sampleRate + 16);
+            AVAudioPCMBuffer *dstBuf = [[AVAudioPCMBuffer alloc] initWithPCMFormat:g_audio.dstFormat frameCapacity:dstCapacity];
+            __block BOOL provided = NO;
+            NSError *err = nil;
+            AVAudioConverterInputBlock inblk = ^AVAudioBuffer * _Nullable(AVAudioPacketCount inNumberOfPackets, AVAudioConverterInputStatus *outStatus) {
+                if (provided) {
+                    *outStatus = AVAudioConverterInputStatus_NoDataNow;
+                    return (AVAudioBuffer *)nil;
+                }
+                provided = YES;
+                *outStatus = AVAudioConverterInputStatus_HaveData;
+                return (AVAudioBuffer *)srcBuf;
+            };
+            [conv convertToBuffer:dstBuf error:&err withInputFromBlock:inblk];
+            if (err) {
+                W_ReleaseLumpNum(lumpnum);
+                return -1;
+            }
+            playBuf = dstBuf;
+        } else {
+            playBuf = srcBuf;
+        }
+
+        // Build cache entry and insert
+        DGSFXEntry *newEntry = [DGSFXEntry new];
+        newEntry.sfx = sfxinfo;
+        newEntry.buffer = playBuf;
+        newEntry.useCount = 0;
+        NSUInteger sizeBytes = (NSUInteger)playBuf.frameLength * playBuf.format.channelCount * sizeof(float);
+        newEntry.sizeBytes = sizeBytes;
+
+        dispatch_sync(g_audio.queue, ^{
+            [g_audio.cache insertObject:newEntry atIndex:0];
+            g_audio.cacheBytes += sizeBytes;
+            // Evict if exceeding cache size
+            while (g_audio.cacheBytes > (NSUInteger)snd_cachesize && g_audio.cache.count > 1) {
+                BOOL evicted = NO;
+                for (NSInteger i = g_audio.cache.count - 1; i >= 0; i--) {
+                    DGSFXEntry *cand = g_audio.cache[i];
+                    if (cand.useCount == 0) {
+                        g_audio.cacheBytes -= cand.sizeBytes;
+                        [g_audio.cache removeObjectAtIndex:i];
+                        evicted = YES;
+                        break;
+                    }
+                }
+                if (!evicted) { break; }
+            }
+        });
+
+        entryToUse = newEntry;
+        W_ReleaseLumpNum(lumpnum);
     }
 
     AVAudioPlayerNode *node = g_audio.players[channel];
@@ -227,16 +289,19 @@ static int I_AVF_StartSound(sfxinfo_t *sfxinfo, int channel, int vol, int sep)
         if (node.isPlaying) {
             [node stop];
         }
-        [node scheduleBuffer:playBuf atTime:nil options:0 completionHandler:^{
+        entryToUse.useCount += 1;
+        [node scheduleBuffer:entryToUse.buffer atTime:nil options:0 completionHandler:^{
+            if (entryToUse.useCount > 0) entryToUse.useCount -= 1;
             g_audio.channelActive[channel] = @(NO);
+            g_audio.channelEntry[channel] = [NSNull null];
         }];
         if (!node.isPlaying) {
             [node play];
         }
         g_audio.channelActive[channel] = @(YES);
+        g_audio.channelEntry[channel] = entryToUse;
     });
 
-    W_ReleaseLumpNum(lumpnum);
     return channel;
 }
 
@@ -246,6 +311,12 @@ static void I_AVF_StopSound(int channel)
     if (channel < 0 || channel >= AVF_NUM_CHANNELS) { return; }
     AVAudioPlayerNode *node = g_audio.players[channel];
     dispatch_async(g_audio.queue, ^{
+        id ent = g_audio.channelEntry[channel];
+        if (ent != (id)[NSNull null]) {
+            DGSFXEntry *e = (DGSFXEntry *)ent;
+            if (e.useCount > 0) e.useCount -= 1;
+            g_audio.channelEntry[channel] = [NSNull null];
+        }
         [node stop];
         g_audio.channelActive[channel] = @(NO);
     });
