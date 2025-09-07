@@ -10,7 +10,7 @@ The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomge
 
 
 - macOS has sound via SDL2
-- watchOS currently does not have sound
+- watchOS: experimental SFX sound scaffolding (AVFoundation). Music is disabled for now.
 
 ## Controls
 
@@ -35,9 +35,7 @@ Controls can be adjusted in `TouchToKeyManager.swift`.
 
 ## TODO:
 - Add macOS controls
-- Watch sound? - Probably not going to happen via SDL due to missing support from frameworks like [Audio Toolbox](https://developer.apple.com/documentation/audiotoolbox/)
-  - Add SDL frameworks (see macOS target)
-  - Add compiler flag: `-DFEATURE_SOUND`
-  - Add i_sdlsound and i_sdlmusic to Watch target
+- Watch sound
+  - AVFoundation-based SFX backend is scaffolded for watchOS (no music yet)
+  - Music will require a softsynth or pre-rendered tracks
 - Get MIDIs going
-

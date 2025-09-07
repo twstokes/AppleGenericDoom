@@ -20,7 +20,7 @@
 #ifndef __I_SWAP__
 #define __I_SWAP__
 
-#ifdef FEATURE_SOUND
+#ifdef FEATURE_SOUND_SDL
 
 #include <SDL2/SDL_endian.h>
 

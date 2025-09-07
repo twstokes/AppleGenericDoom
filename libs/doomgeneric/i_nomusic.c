@@ -1,0 +1,41 @@
+//
+// No-op music module for watchOS to satisfy DG_music_module references.
+//
+
+#include "config.h"
+#include "doomtype.h"
+#include "i_sound.h"
+
+static boolean I_NoMusic_Init(void) { return true; }
+static void I_NoMusic_Shutdown(void) { }
+static void I_NoMusic_SetMusicVolume(int volume) { (void)volume; }
+static void I_NoMusic_PauseSong(void) { }
+static void I_NoMusic_ResumeSong(void) { }
+static void *I_NoMusic_RegisterSong(void *data, int len) { (void)data; (void)len; return NULL; }
+static void I_NoMusic_UnRegisterSong(void *handle) { (void)handle; }
+static void I_NoMusic_PlaySong(void *handle, boolean looping) { (void)handle; (void)looping; }
+static void I_NoMusic_StopSong(void) { }
+static boolean I_NoMusic_MusicIsPlaying(void) { return false; }
+static void I_NoMusic_Poll(void) { }
+
+static snddevice_t music_devices[] = {
+    SNDDEVICE_GENMIDI,
+};
+
+music_module_t DG_music_module =
+{
+    music_devices,
+    (int)(sizeof(music_devices) / sizeof(music_devices[0])),
+    I_NoMusic_Init,
+    I_NoMusic_Shutdown,
+    I_NoMusic_SetMusicVolume,
+    I_NoMusic_PauseSong,
+    I_NoMusic_ResumeSong,
+    I_NoMusic_RegisterSong,
+    I_NoMusic_UnRegisterSong,
+    I_NoMusic_PlaySong,
+    I_NoMusic_StopSong,
+    I_NoMusic_MusicIsPlaying,
+    I_NoMusic_Poll,
+};
+
