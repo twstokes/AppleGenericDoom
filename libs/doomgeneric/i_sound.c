@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifdef FEATURE_SOUND
+#ifdef FEATURE_SOUND_SDL
 #include <SDL2_mixer/SDL_mixer.h>
 #endif
 
@@ -426,7 +426,7 @@ void I_BindSoundVariables(void)
     M_BindVariable("snd_samplerate",    &snd_samplerate);
     M_BindVariable("snd_cachesize",     &snd_cachesize);
 
-#ifdef FEATURE_SOUND
+#ifdef FEATURE_SOUND_SDL
     M_BindVariable("use_libsamplerate",   &use_libsamplerate);
     M_BindVariable("libsamplerate_scale", &libsamplerate_scale);
 #endif
