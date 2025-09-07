@@ -32,10 +32,3 @@ action | down | fire
 **Fire** also changes based on game state: ESCAPE (Menu) or FIRE (In-Game)
 
 Controls can be adjusted in `TouchToKeyManager.swift`. 
-
-## TODO:
-- Add macOS controls
-- Watch sound
-  - AVFoundation-based SFX backend is scaffolded for watchOS (no music yet)
-  - Music will require a softsynth or pre-rendered tracks
-- Get MIDIs going
