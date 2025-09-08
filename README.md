@@ -2,6 +2,8 @@
 
 The goal of this project is to take [doomgeneric](https://github.com/ozkl/doomgeneric) and port it over to Apple devices. This was mostly a weekend hack and may not progress any further.
 
+[YouTube video of it running on an Apple Watch.](https://youtube.com/shorts/Z2bWLXOEflI)
+
 | macOS | Apple Watch |
 | - | - |
 | <img alt="DOOM on macOS" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/40b54b8c-ac1b-49a7-bbc7-c0674d4b82fe"> | <img alt="DOOM on watchOS" src="https://github.com/twstokes/AppleGenericDoom/assets/2092798/cf3ae161-735a-422a-9ad8-1fd11f6f83f6"> |
